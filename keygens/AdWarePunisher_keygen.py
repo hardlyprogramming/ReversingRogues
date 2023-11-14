@@ -7,9 +7,7 @@ C4 = '123456789MNBVCXZLKJHGFDSAOPIUYTRE123456789MNBVCXZLKJHGFDSAOPIUYTRE'
 
 
 def get_email():
-    email = input('Email: ')
-    if email == None:
-        email = ' '
+    email = input('Email: ') or ''
     return(email)
 
                                                                                                                                             
@@ -38,7 +36,6 @@ def change_endian(xlist):
 
 print('\n\n')
 email = get_email()
-email = format_email(email)
 
 # create md5 hash of email
 md5 = create_md5(email)
