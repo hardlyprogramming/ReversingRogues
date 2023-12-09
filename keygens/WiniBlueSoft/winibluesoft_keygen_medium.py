@@ -3,18 +3,25 @@ import math
 
 
 def get_chunk1():
-    while True:
-        chunk = ''.join(random.choice('abcdef') for _ in range(8))
-        if int(chunk,16) % 0x154 == 0:
-            return(chunk)
+    chunk = ''.join(random.choice('abcdef0123456789') for _ in range(8))
+    chunk = int(chunk,16) * 0x154
+    chunk = hex(chunk)[2:]
+    chunk = chunk[-1:-9:-1][::-1]
+    chunk = int(chunk,16) + (0x154 - int(chunk,16) % 0x154)
+    chunk = hex(chunk)[2:]
+    return(chunk)
      
 
 def get_chunk2():
     while True:
-        chunk = ''.join(random.choice('0123456789') for _ in range(8))
+        chunk = ''.join(random.choice('abcdef0123456789') for _ in range(8))
+        chunk = int(chunk,16) * 0x154
+        chunk = hex(chunk)[2:]
+        chunk = chunk[-1:-9:-1][::-1]
+        chunk = int(chunk,16) + (0x154 - int(chunk,16) % 0x154)
+        chunk = hex(chunk)[2:]
         if int(chunk[0],16) < 8:
-            if int(chunk,16) % 0x154 == 0:
-                return(chunk)
+            return(chunk)
 
 
 def get_overflow(num):
