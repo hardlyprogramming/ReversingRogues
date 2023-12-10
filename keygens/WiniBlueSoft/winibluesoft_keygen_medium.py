@@ -188,7 +188,7 @@ while found == False:
                       EAX = old_eax
                       EDX = int(EAX,16) % 0x67
                       EAX = math.trunc(int(EAX,16) / 0x67)
-                      if EDX == 0:
+                      if EDX == 0 and len(serial) == 19:
                         print('FOUND!')
                         serial = f'{chunk1[0:4]}-{chunk1[4:]}-{chunk2[0:4]}-{chunk2[4:]}'
                         print('Serial: ', serial)
