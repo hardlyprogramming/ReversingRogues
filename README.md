@@ -1,4 +1,4 @@
 # ReversingRogues
-Repository of keygens (maybe cracks as well) for rogue software
+Repository of keygens for ( mostly old :] )rogue software
 
 Visit my blog at https://www.hardlyprogramming.com for more.
